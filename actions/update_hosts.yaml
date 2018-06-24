@@ -1,0 +1,31 @@
+---
+name: update_hosts
+pack: st2_chatops_aliases
+description: Update Ansible host inventory
+runner_type: local-shell-cmd
+enabled: true
+entry_point: ""
+parameters:
+  kwarg_op:
+    immutable: true
+  hostname:
+    type: string
+    description: "Hostname to be added"
+    required: True
+    immutable: True
+  public_ip:
+    type: string
+    description: "ip to be added"
+    required: False
+    immutable: True
+    default: ""
+  label:
+    type: string
+    description: "labels to be added"
+    required: False
+    immutable: True
+  cmd:
+    immutable: true
+    type: string
+    description: "Command to run"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook /opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/playbooks/update_hosts.yaml --extra-vars='hostname={{ hostname }} public_ip={{ public_ip }} label={{ label }}'"

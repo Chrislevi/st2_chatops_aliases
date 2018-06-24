@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - add_host:
+      name: "{{ hostname }}"
+      groups: hubot-created
+      ansible_host: "{{ public_ip |d("")}}"
+      label: hubot
+
+- hosts: hubot-created
+  tasks:
+      - lineinfile:
+          path: "/etc/ansible/hosts"
+          line: "{{ invetory_hostname }} {% if "" not in public_ip %}{{ public_ip }}{% endif %} label='{{ hostvars[inventory_hostname]['label']' }}"
