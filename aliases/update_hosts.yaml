@@ -6,7 +6,7 @@ name: chatops.ansible_update_hosts
 action_ref: st2_chatops_aliases.update_hosts
 description: Update package on remote hosts
 formats:
-    - display: "add_host <hostname>:<public_ip> with <label>"
+  - display: "add_host <hostname>:<public_ip> with <label>"
     representation:
       - "add_host {{ hostname }}:{{ public_ip }} with {{ label }}"
 result:
