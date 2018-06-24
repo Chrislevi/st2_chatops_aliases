@@ -13,6 +13,7 @@ parameters:
     description: "Hostname to be added"
     required: True
     immutable: True
+    default: "example.com"
   public_ip:
     type: string
     description: "ip to be added"
@@ -23,7 +24,6 @@ parameters:
     type: string
     description: "labels to be added"
     required: False
-    immutable: True
   cmd:
     immutable: true
     type: string
