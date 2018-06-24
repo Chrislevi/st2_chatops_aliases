@@ -6,8 +6,6 @@ runner_type: local-shell-cmd
 enabled: true
 entry_point: ""
 parameters:
-  kwarg_op:
-    immutable: true
   hostname:
     type: string
     description: "Hostname to be added"
