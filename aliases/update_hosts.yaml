@@ -11,7 +11,7 @@ formats:
       - "add_host {{ hostname }}:{{ public_ip }} with {{ label }}"
 result:
   format: |
-      Update hosts `{{ execution.parameters.hostname }}`{% if "" not in execution.parameters.public_ip %}:`{{ execution.parameters.public_ip }}`{% endif %}: {~}
+      Update package `{{ execution.parameters.hostname }}` on `{{ execution.parameters.public_ip }}` host(s): {~}
     {% if execution.result.stderr %}
     *Exit Status*: `{{ execution.result.return_code }}`
     *Stderr:* ```{{ execution.result.stderr }}```
