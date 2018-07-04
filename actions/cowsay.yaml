@@ -15,7 +15,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/usr/games/cowsay {{message}}"
+    default: "/usr/games/cowsay -f sodomized-sheep {{message}}"
   message:
     description: "Message to say"
     type: string
